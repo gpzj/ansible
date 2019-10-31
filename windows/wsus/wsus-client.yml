@@ -1,6 +1,13 @@
 ---
 
 # PLEASE COMMENT ON GITHUB IF THIS HELPS YOU OR IF YOU HAVE ISSUES/RECOMMENDATIONS!
+# This is to add computers to a WSUS server by modifying registry keys. 
+# Use Host Vars or some other Vars to update:
+# wsus_target_group
+# wsus_noautoupdate  1 Disable, 0 Enable
+# wsus_auoptions 2 = Notify before download. 3 = Automatically download and notify of installation. 4 = Automatically download and schedule installation. Only valid if values exist for ScheduledInstallDay and ScheduledInstallTime. 5 = Automatic Updates is required and users can configure it.
+# wsus_scheduledinstallday # 0=monday, 7=sunday
+# wsus_scheduledinstalltime # 0-23 time in hour
 
 - name: Update WSUS Client Settings
   hosts: all
